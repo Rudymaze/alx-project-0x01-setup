@@ -1,8 +1,6 @@
 import Header from "@/components/layout/Header";
 import UserCard from "@/components/common/UserCard";
-import { PostProps, UserProps } from "@/interfaces";
-import PostCard from "@/components/common/PostCard";
-import posts from "../posts";
+import { UserProps } from "@/interfaces";
 
 interface UsersPageProps {
   users: UserProps[];
@@ -15,17 +13,6 @@ const Users: React.FC<UsersPageProps> = ({ users }) => {
       <div className="flex flex-col items-center overflow-auto p-4">
         {users.map((user) => (
           <UserCard key={user.id} {...user} />
-        ))}
-      </div>
-      <div className="flex flex-col items-center overflow-auto p-4">
-        {posts.map(({ title, body, userId, id }: PostProps, key: number) => (
-          <PostCard
-            title={title}
-            body={body}
-            userId={userId}
-            id={id}
-            key={key}
-          />
         ))}
       </div>
     </div>
