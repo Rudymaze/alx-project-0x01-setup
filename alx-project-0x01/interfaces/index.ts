@@ -27,6 +27,8 @@ export interface UserProps {
     catchPhrase: string;
     bs: string;
   };
+  onSubmit: (post: UserProps) => void;
+  onClose: () => void;
 }
 
 export interface UserData {
@@ -69,7 +71,6 @@ export interface PostModalProps {
   onClose: () => void;
   onSubmit: (post: PostData) => void;
 }
-
 // import Foundation
 
 // // MARK: - UserProps
